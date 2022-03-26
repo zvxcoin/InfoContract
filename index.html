@@ -388,7 +388,7 @@
 
         var info = infoContract.at('0x079ED094DCe7a18b0E8E8cc692e8ABFb076F5CE7');
 
-        info.getTokenList(function(error, result){
+        info.owner(function(error, result){
             if(!error)
                 {
                     $("#info").html(result[0]+' ('+result[0]+' hb)');
