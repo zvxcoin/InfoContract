@@ -43,364 +43,58 @@
 
         var infoContract = web3.eth.contract([
 	{
+		"constant": true,
 		"inputs": [],
-		"stateMutability": "nonpayable",
-		"type": "constructor"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
+		"name": "getInfo",
+		"outputs": [
 			{
-				"indexed": false,
-				"internalType": "uint256",
-				"name": "date",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"internalType": "string",
-				"name": "code",
+				"name": "",
 				"type": "string"
 			},
 			{
-				"indexed": false,
-				"internalType": "address",
-				"name": "childAddress",
-				"type": "address"
+				"name": "",
+				"type": "uint256"
 			}
 		],
-		"name": "ChildCreated",
-		"type": "event"
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	},
 	{
+		"constant": false,
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "name_",
+				"name": "_fName",
 				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "symbol_",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "totalSupply_",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256[4]",
-				"name": "buyFeeSetting_",
-				"type": "uint256[4]"
-			},
-			{
-				"internalType": "uint256[4]",
-				"name": "sellFeeSetting_",
-				"type": "uint256[4]"
-			},
-			{
-				"internalType": "address[6]",
-				"name": "addrs_",
-				"type": "address[6]"
-			},
-			{
-				"internalType": "uint256[9]",
-				"name": "amounts_",
-				"type": "uint256[9]"
-			}
-		],
-		"name": "createChild",
-		"outputs": [],
-		"stateMutability": "payable",
-		"type": "function"
-	},
-	{
-		"anonymous": false,
-		"inputs": [
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "previousOwner",
-				"type": "address"
-			},
-			{
-				"indexed": true,
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "OwnershipTransferred",
-		"type": "event"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_addr",
-				"type": "address"
-			}
-		],
-		"name": "remove",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_addr",
-				"type": "address"
-			},
-			{
-				"internalType": "address",
-				"name": "_i",
-				"type": "address"
-			}
-		],
-		"name": "set",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address[]",
-				"name": "adl",
-				"type": "address[]"
-			}
-		],
-		"name": "setAirDropList",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "amount",
+				"name": "_age",
 				"type": "uint256"
 			}
 		],
-		"name": "setServiceFee",
+		"name": "setInfo",
 		"outputs": [],
+		"payable": false,
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "val",
-				"type": "address"
-			}
-		],
-		"name": "setServiceReceiver",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_addr",
-				"type": "address"
-			}
-		],
-		"name": "get",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "index",
-				"type": "uint256"
-			}
-		],
-		"name": "getAirDropAddress",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getAirDropListLength",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "getTokenList",
-		"outputs": [
-			{
-				"internalType": "contract RedKing[]",
-				"name": "",
-				"type": "address[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_addr",
-				"type": "address"
-			}
-		],
-		"name": "getTokenSupply",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "owner",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "serviceFee",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "serviceReceiver",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"name": "tokenList",
-		"outputs": [
-			{
-				"internalType": "contract RedKing",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"name": "tokenOwners",
-		"outputs": [
-			{
-				"internalType": "address",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	}
 ]);
 
-        var info = infoContract.at('0x079ED094DCe7a18b0E8E8cc692e8ABFb076F5CE7');
+        var info = infoContract.at('0xBB178EfFD188C70d2b93b7e720ce2c6dEd612b22');
 
-        info.owner(function(error, result){
-            if(!error)
-                {
-                    $("#info").html(result[0]+' ('+result[0]+' hb)');
-                    console.log(result);
-                }
-            else
-                console.error(error);
-        });
+info.getInfo(function(error, result){
+    if(!error)
+        {
+            $("#info").html(result[0]+' ('+result[1]+' years old)');
+            console.log(result);
+        }
+    else
+        console.error(error);
+});
 
-        $("#button").click(function() {
-            info.setInfo($("#name").val(), $("#age").val());
-        });
+$("#button").click(function() {
+    info.setInfo($("#name").val(), $("#age").val());
+});
 
     </script>
 
