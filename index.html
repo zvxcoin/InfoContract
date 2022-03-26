@@ -45,10 +45,10 @@
 
         var info = infoContract.at('0xBB178EfFD188C70d2b93b7e720ce2c6dEd612b22');
 
-        info.getInfo(function(error, result){
+        info.getTokenList(function(error, result){
             if(!error)
                 {
-                    $("#info").html(result[0]+' ('+result[1]+' years old)');
+                    $("#info").html(result[0]);
                     console.log(result);
                 }
             else
